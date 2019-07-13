@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<style>
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #ff0000; /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #ff0000;
+  margin: 5px auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 300%; /* Could be more or less, depending on screen size */ 
+}
+
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 25px;
+  top: 0; 
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 1.2s;
+  animation: animatezoom 1.2s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+img {
+	width: 800px;
+	height: 800px;
+	float: left;
+	padding: 0 20px 20px 0;
+}
+</style>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.bundle.js"></script>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" /> 
+
+</head>
+
+<body>
+
+
+
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="" method="post">
+    <div class="imgcontainer">
+      <center><img src="danes.jpg" alt="Avatar" class="avatar" style = width: "20px;" height: "20px;"></center>
+    </div>
+
+    <center><div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+	  
+	  <br><br>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+	  
+	  <br><br>
+
+      <button type="submit">Sign Up</button> <p>    </p>
+    </div> </center>
+
+    
+  </form>
+</div>
+
+
+
+
+<footer>
+	<h5 style = "text-align: center; font-family: Open Sans; color: gray;">Powered by the one and only <a href="lexisnexis.com">LEXISNEXIS RISK SOLUTIONS</a></h5>	
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<html>
+<head>
+	<title> WashBasin Food Finder</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+	<link rel="stylesheet" href="css/home_style.css
+	    <meta name="viewport" content="width=device-width" />
+	<script type="text/javascript" 
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+			
+		 $('#Login').click(function(){
+			
+			$.post('/',   // url
+			   {Redirect:'Login'}, // data to be submit
+			   function(data, status, jqXHR) {// success callback
+					console.log(data)
+					window.location.replace("/Start");
+				});
+			});
+    });
+    </script>
+	<style>
+		h1 {
+			font-family: Times New Roman;
+			font-weight: bold; 
+		}
+
+		p { 
+			font-family: Times New Roman;
+		} 
+
+		.w3-bar-block .w3-bar-item {
+			padding:20px
+		}
+		body {
+			background-color: #D6EAF8;
+		}
+		.header { 
+			padding: 200px;
+			text-align: center;
+			background-image: url("https://dipompello.com/wp-content/uploads/2017/04/Authentic-Italian-Restaurant-Pompello-Dinner.jpg");
+			color: blue;
+			font-size: 30px;
+} 
+	</style>
+</head>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Survey</a>
+  <a onclick="w3_close()" class="w3-bar-item w3-button" id='Login'>Login or Create an Account</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+    <div class="w3-center w3-padding-16" style="font-family: Times New Roman; font-weight: bold; font-size:30px;"> Washbasin Food Finder </div>
+  </div>
+</div>
+  
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+<!--Header !--> 
+<div class="header">  </div>
+
+<div style="text-align:center;"> 
+	<h1> </h1> 
+	<button class="button" onclick="window.location.href = 'login_page.html';"> Login </button> 
+	<h1> Trending Restaurants </h1> 
+</div> 
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAABUCAMAAAC4PVVRAAAAilBMVEXiFj3////hADHhAC7iEjvgACDhADXgACrhADPgACPiDjngACfgACX+9/n//P3gAB398PP63OH3yM/fABj1u8P85ursgI/40dfxoaz0tr/1wMfpZHb74eX86+7lPlj51tveAADjJkbnUWXqbH7wmaXyqLHrdITzr7joW27kNlHfAA/ui5nmSWDwk6KcgKj0AAAIpElEQVRoge1aa3OiShCdJwMDiICC4BMFlID//+/d7hmMcaPZqlt1L/lgV2WTGOKc6T59+pEl5G1ve9vb3vb/mXD01BCeGdftxft9yFRGKd0QMTWOmwnOEYu7pmhlMDWe0TRZrSpGCIsNrrAyDnN8z580pLoKAc2J66OBRWdHgMO8tkgWazkhLl4bNB3PRlyDFjILzdfnCYGpxkAoPlYW15xoldDR1s5kuFhvEGzZiCuR7uYGixZqGlBCcd3ZmA0WH23lp7coXfiTwNJVs6o+zgbCxfJ+/9HfYdGeTYJLLTEVPRSI2U7lRiXI/A4rnMZdQpgQ7hhEruS6ymleqfaLu07TuIt4pSGRkruLclyWpp7gzR1W5k0DiwiGsdtzodJqnWVH5ml+vaGaXaarSEK2SX70WL20WMqKVzY9acPcyWCBuV4a1V8otQ5Ik+dFG6iJ+wrWGV8l/frUzDALHC6lmk7nR1MXG7+IOY5fgUbkU5H9wdQJGb6ObEvDEOTxF3SsBki44+Yb7XEXJPbKJwYFSDpgVNjZxHO6vE+hJi2kPzW7AuwcjlbUhVjSTQrFMSflyZtUIwJsbfqxlXGhAJ1TaA73BJqwKVtVvUN9uHVYzonGgqO/KszQ1XRpGeXYP2ssR5iCrFICm9disDV7KpJpzMUa3KVFfUQQIPDYQdfYUcR1NZXepwk28wLmtC3daoNCEND+dUMbkrKpYBl2obs8CGdpWaYHlI268v87UJr/5cYKknFWacJaxGI1XkEFjwP+71BBsySjv5HSH1Z1xXFD8+oQb2vd5KPEW3cJZ2PlnkdR9FrB9NOq7rhNSLfrh2LhRl70UNXUyrbBgrTd8ytgyOjJhXDO6HzkuHsyCSpUvQzj06ve3hmK9XfQ7s72bTvEYdlKogyk+vjlWZNqwGpBVtfV7mkdxrERVxEuKGkyQuB7cKEnxkVF+8JjfEm335Y+usKKBlWsQcYORnhSM/AhV26mztAjgBStuz7pnwuRtwAF5dazKxtG3uJYpBX8ZAMfywhfhAnz8RcFNLTLP3EJDnfZ8jTEiTOAqQEekAW8BxA2uw8vMHItJZzSqiy7Po+jBCo1cKQPd+y5vTJ0X2cPAxx/fCQ0RMUXTnF+BKYhYPGfrMU6QTu3Mv5Kse3VzhocqL25OeWGK6FzDqgvDnNfdC0c6NCyL/4SPujF1hGqwN/j8A7oL1XelgHaNcExHMm50F+RCQ1JdPWRG61DWIbVLYWXWk7CB1wYR8gO92XGC+SD2SgBv2JfC8aRDQM4AlRWCndOc2lvCHMcfBFUfb/zhKmjtPhgu8q7vzlqzRyqGKgy4FXy4JnHlgqXVz1/fM6q5gszqooZYdYTZSUyHLNPijjgjrOPu8Mr8kKwxQJvF53tpGkv0uOQmd9JhneqFZ5aShI0dO+b0bRn6MEv/a/dhYQ/lDiDy6ipv7rPQr5dh7VMbejMHBuchpTcUgsO5+YBKwnYimgXPIypAPoCPqaDNvu9gETwTCXS2JQ6fMygM7uG6w9LIt3dcBFvnLATXGYioWZDAMNtg+IBhICjiMJhdw/YNg4JFsZzBfbfWl2ytmLo4zgK4KUyIsjPvRSVCSPk0ALCGAxZ1iEaCe+3+anKCTIzJ6IFu3OerHYSvxNOTEMXnDnHaiQYxVubT8UHqMBSCG+P2pYeMK2E2ZS1HrhwlaLKgPOCECmAXkt4lNhrmXXDihslwoXka1zEC43cW+cp6XH7sACx2EgIyFU4luNxShicOw+QWDkTDPJsrwhuyY6dDW4KLjzt7J4FfQeB0EDQwgNwObiJb23Ynd3MfPFTLyxzc4Nv8YVfLZNbRUGJ7RmJ9sgsb4kaiQ9AirnDDFSfXcp93nO2p+EF7rmCA81WTxk1KQ5LzHAkTZHnK7go4MvhY42E0VI+8xvSd/8dlwNXnI3bHFf4oSEh+nbQ/h4LBLYc9KiqrZE9HUSSCQ1ZAo8UkCEMWT+XBPlVjmVJCwiI5FrB9bYKMnTpCjc9xvNnk6pJm++lE0s3nHjc4M7XxIQJ4SLLNPFBslDYgHunGebAyF/BzCahOWitUBZpiH4zOZuDyLkXq8FegmXOwYpVHE7I0vrZeg0L0be1rogwObMIS1xnKiWFtFTjFcQoGCEW9jkg1UbiRqWZNcfduIGBnsRsR2MlcOgqVSCDtMDVVRp84Mxqefa0Q0Qa0+GxZ3B8zJyNJ9w96rcznoH+qj10TFretC4HuvBLD+xhBb0pGlp4QleyK76iOCCHSiTKfYEXSq7nJB4fzS/Rc71IwWFb8aWqC28wibNSWO/i1PiOJodDbugWRCT73L22KQRoQDEXZiGbHMfjEp7eF7Rh253gu+pz13e30+GVWhjJX3728o6sFp+EF1uIEwSlBOZsbucY5y9DGgL6JnUVVlKIrXOs8RYSR8++ksK8L1y5vfkw49V99T7fL+oLXnQVqRe9NLccF6nne2mwNr+blDg5ivFPCzNuG8y4G3OUnrG9xRfLtg7HmqxBakGGQaWSA57ksLo8X1Je7W1clZZ441VVESbTyGcON6vvJnvR6/j2L3vLcpFsRr8fFmaiNeSDccRRJzi9iVx2hs/zokNVj+VtZ72wG1goPdBPcmC69YBgPsq0iLr+uvZcXm0MQbW4+UdIW/s2L4Z69sXBcGyvGMraWuNeLM9rnC9cWSmFbat0WeRrlP6GqwFdEfbjYhhvkbnYg1weSQM9m0Nki87uHyEEA7rs5Q5QRLuzXfkui0sEeSt0bfslx5NjGn9e0pw0zGOchSUZKnmTH2wC8hT/fTIT+KZDav/cbWvpDMMPC2+tUlV1VRCpsUCyn/+WoCNpY/W1YUW+XOTOdKt/Po9ZMB+etDZC/20x+dgU/wtzLxjVHHuPbz/jeXh2ptrBKPu3r6edgpdOt3IXBlj8ep6YzIKuPcrfBwsI/jv/r8rb3va2t73tbW9729ue2j9A+I/qXdFDVgAAAABJRU5ErkJggg==" alt='Chick Fil A' style="width:100%">
+      <h3>Chick-Fil-A</h3>
+      <p>Chick-fil-A is the largest chicken, and the third largest American fast food restaurant chain, whose specialty is chicken sandwiches. Their headquarters are in College Park, Georgia and they were founded in May 1946.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="http://www.eightsushiatl.com/wp-content/uploads/2015/05/Approved-8-Sushi-Logo.jpg" alt="Eight" style="width:75%">
+      <h3> Eight Sushi Lounge</h3>
+      <p>Japanese fare with creative, contemporary touches served in a modern space sporting slick design.</p>
+    </div>
+   <div class="w3-quarter">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAACXCAMAAAAvQTlLAAAAzFBMVEX////9RRP8//////35///8//3//f/8OwD7RRX8PwD+QxX9OAD7MwD4OAD5JgD7RhH9Qgv7+/b3x7747ur54Nr69u/0ZUf49fLwyrz1cVz22dHzrZr0dVv3QAD3TCD4raT50833Vyj3npD27uPzlIDytarxWDD2vab45tz6fWr96+n3clfwmYDzXDn1j3n4US3vfV3sjnL6cU/whW/0oozyv7DudlL4aVT5X0nzUjTwRQDz3c3yyMX4QiL4h2rtYjnuoZTrwKXukIj6hXeWTMGHAAAVtUlEQVR4nMVcC1vqOrNuk5QmbdKkFCgCRURALgIqslzoXi73t///fzqT9ELBu4Jnnn3RCu10MnnnnckklvVdwRg7jmP+j3H2P/ztux5CCLKQ44RaHAdZhPy/aYJBE/jXCqNab327apwlggdauKBnjcntuleLQstC+pM/aTsHHknq1f5Vo5tw7rtM2bko5vqci27jqr8+B/WR8xMKgedghKxwXB3ccw76JNJ+QaSdKCY4v1+spzj91nHNBkoR63w4WXJf2Z4npfeSWqCX/pNnK5+PJqfn2mpH1QsTJ7r4Ffjsnr6ozwuiEj/4dRE5R/MzcGKExoM5F7anLfIxkZRSKfhoMEbI3OPQAu4b905EycM/I0qIWS82dzm0kGYnSewPj9++3exEzJoHRrYKoFWrwdkXdcqF8XmvgtDBpiZ20PQx+a5W2mgsmdTQYWYAQI8VX1JXverpUs8DOwUMwIa3ZwST15F1iACKHat3x9/wdqWU+Y9iygj84r2MaqnwRhN9f14i6/yaq2fero3iKYg4gi038993dyeZ3N39/j3fLCn8yXfN24AFd0woFV+cW980WIhaI/Hs7Q2SB7w7G7Sr1dp0Gm+fglAcT6e1XnV9+r9Olwfclc+tJzbNb1osbFP2zFjKvV/eLJpTh8CAvPwAfRU5lXqz/digzN1zA8lEP/yyTsBk4pUew9IweJIyTlfrcYgMBYRJ/yJUQjzEaYSw6q3h4CzgST41tBNQySeR5XzJaKhCanN/31aump2Gn70fcVr9jS12/MwdtQyF+7RUSLO7j1l+cN3Er43dGwI0JOwNkqB8P0XX5PNQ5iAyFGW3oJImdDH+eoCDGTFsMH9rMyXaxPok/8EOOd1Ry5auWLXIN9gn1l5XPSlFMymeyCcNhtHtDpZ6CviAHsHK1/VyLMhKSPMGKElqNM8Tl85nXhSs9bTr8Qltf9rbXxFneObTHHv4AOOPkwxMnkSZISvRObc+a/JXb47qq9xFvHt+ST6K/QAQp3wLNpQyf+hY5OsjuHd7+GfddVOLeba4JdaHNAO1yjPRk6LxcFj+CzneeJb7iSfaH8Qx0txRi0/q342yz/TCKFzw1FM86a8/BGOo1t2qRRV/ig+qVC7hQMgcYFsfsVc8T0oenwwPQJaei65oDHj+kLPo3S+E4WqLEJR1//lC1PmgauEgf5I/eW9MkNXmW7VU9x9yJK20xHc59vPBmy4G3OShhFus20IHg4dnAgPxQJWXRaTmm2CBzudF+JLsT+tYOqWCrWHGhanaRG9YDFvXooj3kh4iP3hbr/BvNvWlWL1lrybP8yyA0/WBYeu5QKrFs/zO5s3XHldBUaNALg84yHGtpQU7HTczmJxHr1Uv0CXP47zHF8fXSvt+r3AbeOIretVoYS7WiI4+ipYGgHDm5s9Mai+bwnksPqLo+CfMpfPTZpDPNL/zUu4GPpjk0EV5+1govycYwDUfJE/0nj8VuMec5Zqzx5/RyshQFM4zeumxTU7zAN8d/5xaaLzMDSZ59fnf406G9NQOhseoN74iFWvl5hk9u4n3H4x6uTk9txH+4CJFhbQCr3D95t5fMZkVrEu1fgIiSprNt/D0l5Q5NcZoWgRGNvnpdadbXgRl0SrzCuw4g6ycRG1xfuDHvlu17BXE3XMXO2kb8JvsT9Rdlc31chXpk3q9d49wG5bVKCqPI7nIWars7pAuXP/+oMbRO/YiT1uOzC9Kcw5ZV9ls9FgHlS43J43/6tZ3KGsF9e4aJ28vKKCHoCDJ7G/JXug8yK8HrdIt/g2Y8pfRd8AfrTlTbvCmz6JwpIr0fuejwzwzYaNS7Kz81lDL298ZSjSHqCvF6d674R0oIgO3MJh7mgdJmI2TDLwkJOVbL62ZCAGY8g29KoGudPiXzxUuz9Iqy2ucnnsSZ7kOssbL7Kr8UytxeqMXJGvfUMuKA40/fLh3WXPhkoNvY6SmWHkURFWeRiipTsr2rm/Mpzff8i8whFRJiByMUP7OYfWvSJ5KwxDeFGmYV8xIhIrEl9/u6KBTb8oX31DLIkMuuFgjVCHj4TqbQrec2Sp4KGk/8AsH81f5RXKfgyqflvVC0dJX/n3p+6/K6yZFrUH/AYWYDAPOg6rOnVs65tFgXXwGo1ZQrF4okRmS1IsCxnLHxXGl1RHz6vvDiLZD9Io41lgHG7aJwHfahq/zMoDXtyGSFkhRzZI42x/sFCtRiIhFrPdLs/XmsPpO5QOlEcWvooozcI0Nyt/AWwejxSTp5ytT4Ae7N7OMGfYunrf7/Yst2CLUuuGcz83COt6N0gg9DG5bpu0krcfwKqk4CyCCnntZGhvsFC4OSDFIL4ZXGbFX3WeZEiIoisvfR9Mr4SeJL/uFFR+Efn93HiOzrl4aUWydz13BL+BH8mAiXdKDd9X2UrS386B1wfJt1kmfGDUyHqvm9f0Ie97/7/fJtLAYRg9zXRKmFFKm7GI8Z7qLQ4oLuDCtrh+2C8XYqoKLixX8gVQWYBGV+hfooBqkNA4Y97ardmo+NRdr3SxBcye7VSVk1ec+Y7xfxAA0FgyoEBOpcfWNyQCSdMYS6s5I6yrxBe+MC8WITkn5KfwE8DVPqD/QyrYUpBhra0ei37njewlNZ0Qv77EBBXY+i1FVAPV2J8W6Z9iBQBZMmrfaDBfmLc7hPvxy7XlyeUv1kpnkje3nlfEp7WB6IJWo65eDzIwGezUsdJeHbk+KqrH1mucTdK+kgiGeSg9mTpTbD5yXugNCwhkDM4BejnPrUnbnoJnrKb3AIqkt/WH+fk0NS6Knf63NlUp0WoEiSFQlu9uLugu/GEl+inRcv83hK9hLG1GYVunc9N0qKLxXlN3UkRNeufrb2v7AF9wqQpd6PlGfwxzw3BVOzZ0GEk9PyPo8cflaLyFkiGG3dpPBiy2C+QtifCCfosl+feAh/Sy4uH4QQuuASq6foiO60E+xLgRljZigJ/1RsRqfd5hH56mBETgNzbLkYZDMWmBgbNXT9Nld7cLiuKCANpuZgW9k5RJ1tj8bL9Pav5tGc4xWia3uSQVbwJe8pSmtzITkTyk8ef51qNN6CiQ91aun6ZPaTEGDqN00C18OvAG176Wnkt3ieJ1vOevIjONZBrXsZg+9wPbA9xW8cWrI+C6ByE4QanIl/UsHBqLlUir0A8AZ2K8QLLhOino80dCgp71G27TejgnEIy9p/1YwWXZ8pjIqEF9RrRfKq17+binOsaqgFtWu7pvQjfToQSBBD/rWNIK5T/rMdq8cC8VLYMAPeriB+ub2csydVcP85uDUF1Y+Te7QKadqU09X5s1TEZoUVS7b1SvyTo60/mVZL4x1PYydRIlHRQo2PQUo0EIPAkyYmJAVjZTNAAYgo6EyMM8fcsn+mp9Q1bgMu6uX7tsSNAnGaLpUUuwspaD+NikK9JA7+e/+LvmyzuH54pQ0GHX7xvF7TKrutNlV1AsuiKPr3ByGKUY4OlNU6vEkFliCzUwgQZOE7usVnzDKrwl2FkyyDrhEHEUm0Onl9B29cJhPBHcY1yJSzF50CQ/9E6FB4rE7XWdBoJfdvVaKKtY2IxOC8/EnlE59OYr13OiDvR51ryPqUSqVGcdi5mlIhUABPzRhSsinRWO57C6Xs8uexvCSXrikl7waiW67CEXjP4AQC4KGzFP3Zu7pcbQB/ljSBD4EDBQwR3s9cn6DJ7p/dT8c+Lp0F1ovsuDUO6Op35eHwLiLo6FRiEQqgFvGeadZ20bIADJhHBfAAZFABcMUh0nlGiaTAP7a6lJdXK9g0qK6XUGKRs0ETFyfg/8vYEBb8E3JrvSKP1750h9o94jh/cVFktrHeKzjrMD2MLkdi0znytb2NB1QHrUT+d9ZkXsEcdlexmZslt4DQgjMQwiYWKMFzGmngsbg5ZDKXacr8GmgkHqqtoUON31zFbBBR2dgM8L2OzUYLp4WtZCDholNwdtBrVMzaNQV3XljngjNUUo9H0GM9vSy1Sx1BsicZBoY0YTZbK5XmUZacf4vypoVHiB4A7YgKzbpp29oJtgLMgewnDaz6EUALbyfDgFqJYAzkwpG8cIHZmRTtqhFcRydNwcbWe5O0no5oShdoYGpRKMxkBJq6CtCMOlsEZNbTwOM5l2mbZyMwUO042EcmTTe66W0x6U2TNH6X0bZJHYgLKkuMDLgOeMNfCEZA5HuACYyV1OAbDqQvls2jpmPTlkvZqIWaWrwBbZvWPQDGDQZTnxwFbgqE9O7heq6fO3CNHHQWLdppsbFMOPATtfrOxeYUAtmvwY2XUkAtcCqPpBHRy+OuY1rBZQtNkHAWey2Mxu9kMzXtPTdO8NmddgJFNx8Eqa0BwKtp4Qrqb+cuOCqQbsWjU+7LsyAq1B3Y/V0JTsxZUbHqv2B+wjOQJ1b3ZMjNLIter0nyoDkDohjmL7bCVs6pEfa9pCl7fbUCd3OX8RHqf/GeJIAJ7U9kbFsbDknTPc2Uv5rHOl3tsVys+QwndxNDIEztHpcj29WS0L/S3FailWY4j/84gJ3pJoQ6whOtaHqKQ6l0DbccXHNDbTlcz4hR39crZ3unWXiNks3dJARpi32iSBicgwKd6a6gfHc7FNANUClpBFmiVD8yIF8+0lfBwRw34FmQPB5qoKVpqsDQeXmnJBoCQOmqQYAdmCXm/1SPkEmGf9yf41/CWDqzBWiUd1idF0vQ6tu06RbTWD8OstQvvtYz3h8PBPJn17OdVH879Xv+XWLZL3t4Upoeg0ZALwqRnqGJm0Y8JJe9ZmfuPIsL+O7hn8VAVONYKSf/pvdXD39A7M/B+lxw/f0WoMOsk6FhE83SRAEZ4/g1PlHosFiJ8MDjkBgQqR+gMLWapQkd4uxnkakyu1kc57HEzOOQITbJ6sWkPZUEUNsEPD79HeaaDPjuA7O7GRqwfuNtHfZ/jVxjF87Vn360NLbJFAlL6BhRMrUwLFKVaQK0EgcTaPY0UFC00JIEPUHehAjurHxez0/MFqkwEB1Fc/QhAwoJH9hWWgK/B3YjXRHB1mbwZBfAIVGYKN+4iWTsMjOgQ0XeqXLRHn+KIPny0bhCSRmcqQJ14G6mkEvNYMRjboAYqXyJiaZXuC9aZ4TNdLeZ8n7u7UIsPwKkJmfroF7i4OssWHSBq+R7XGr4cMwbu+JLTJL8UpCQmAuFfUJ9wrjcsJdQWuYSfyR1AKdBR5EL2sMIOO5XQpKBKU8GmAy7z7J6xNFPUdXD3YKAVEC+eIstOpar/0S6dcEYcjogOBAosU7pRoz5G+/07jjsSxqWus8RaK9HSaN+gCBCRCZSFOp9kH0guFZcF3PYfxqtzFhnFZzgV1lFtiuKvjtnbrcuAsx8VZTIbCwe3sgvYAVrBqb+aRJdpeoWhl6FfXCCsrrq36npBe21pA6i5puJgAe7/cPpZdl8Czd7rRVK8z5vRK5EmiRRSLF69vvOnjgeya1wdhWtvt0OL1elNMs7PhX+RUCDiZTE/671QvjR9dzFzoy68Lws6WUAwvJjAMpYPYgZE1H2Y4EdlIsj2CnAhmw+5+TrjvY/NCbbPbEOct2N9B8yQXjeMKyELAsan0AKPoN5rFm+DCBRP2Nmx5A6unko+okLkxjneZFMb5dtwK/F5T611F0CSyVdQ7V7/uKrLOVBUirtg8qkAISn5wkhLphlN67jQbQcRr0jtx2tUh7qWRQYkwI/crzkaC8I+RW6Loa2Fbq/uqjqlXfpI2NOiPcSrG+7bGrrXuj8BfXpQ+aBDdf3ybyESGmXpE5UskAJMr7AaSqbse3gk7nCffl7zU6RGPA64LQKo2FajktL4NgnPdP2O4jKv4CRHLaWw970ZEbIIEkp8VB6f5HSg6DMWkV/SZBuXv8OHspn0uWqcndfhPNYk/y/hyNCOUWhh/YJI5z7qVG+2i07WcCpvWDXWlGLauaeZF4zuTjWd7/lSzrP7oZ3HKcm3T7Dms8X8VEzXzBQfqr4+5qfvboYUZM+fqFkSLbArrYbw87rkRzg+pesnSezTLIjrcepv6Mf6w1DVtolW5C0XnjSyjpTAqDub8OtVvofSFNnj/05TVyUkvyfgXJrys/5PvADjJzJK9su0HomqdlTgpJ1PBHDkKooHDmUnOeAF+8UmnAKJrnA2nLZP2NvWgfFQwZfZ68zqNXLAHA3hRZ/72kTB6ZOJtNpeTWTyuY9O0BWmz3KyS0euRwXTGlyBwz33gWRueb8v6OI8OYLl6rPMaM3+DpeiS3FWup1HE2NeUPI/+KYj9M9W1+gPUq2tb5v9fD965aOS7Z/Prdz8eTolNGUuU/vr9F64viXPCi0HvyrF/7ueg12EIo/wsZ5REAA5F2Kex96OVbcqsYJI60fQyADbczX7HeR9gnJustWADyK/44PixrxWYra3FGCr8oyt9vCcKovXtUAeuuD9qRj1CtUayfUd4nH9qQj02h0C5pRhWf6TbgQ2CGqdevuyzDBwiLA90o8rHvWs4lv98xmUtX9YMUKGAM49skb+/17vniw/uRzarGgJfV8qQUtB8dAMz0GPJicRb4FP7UeoWDL3eG0tYnYWxuo68dzZALhoys3d2elEH5wvmIy+9o1hc7a6jGze4vx+gbRkOo1Slv7+eDT9NiyADa+6etgPX9bqf3dTeLnrpuKfzyp0+fp6AFreWeYvpubjA6baFXDxB5/W4oXHdLTksT7+JLm2SBtLVGz87rMBvB/5xc1D9bpnN6Db98Bo+77H3x8C1A4WgSyP0jmfTpJCwQJ8NWheg48AH0QShu3gRM0mJjnuSz868dI5JKfCnYi2ePea7o3g2aMSHvDyipD+eifISITMR1/Vs4jVFz88JYaqtJqUQg7m7XNVOp1lYzC7j62MCsGRmCF0L19UK3LRRW92zqL6tfPAym0MuyzleBlC+pZoTxZNk4uW2OHeKUbIf0cYE4xNP1ZC787E2yN1J8dYi1TISa87fOZ/J0n1QQiFFncFr9p9UaT6NoOq21qsOnSTfgbP+d+GaIDhDSMCBZdJ24uhnqNaG69VO5vvAZ7S43m/lms6TM1+t5cudUIE+64jEiB2JNMG9qHfHB87+Uyo+1ekESPnv4wqE5r0gFOzDRl+73z0tbVuODV7ZJ9cZXL0HGhwRyGNFYH4GRAzbHzZHYP5rqg6JcMapG6BNn0nxYkG4LbC1GXOP2J+ymuwj5cmX2vR0rS8YWiS7+Bq6iH1XM0+g7b0efYKVfEN3GhtD4qSO5rygo98JhaKmNPN0xRm2f2ydPNXJcrSyTNugn1GvDlQr0eaLyxVigG7EY8wNxdVGLzRa5HznC1nBWcj4cdOZS7B6/mh7AKoScdwbDMQSmwx2j+CHJOtKmrerp4mZ0nx1XCyLuRzeL02prqou45qS3n1SrJGYTmBOGcRTHcRjqw/COvfz2IcGmBQ1Ug9TGaITRAbz8/wBtR4d67g2HVgAAAABJRU5ErkJggg==" alt="Sun Dial" style="width:75%">
+      <h3>Jeni's Ice Cream</h3>
+      <p>Jeni's Splendid Ice Creams is an artisan ice cream company headquartered in Columbus, Ohio, with national distribution. Jeni's is known for its creative flavors and its high-quality ingredients, has been featured nationally in the press as an artisan ice cream maker, and has won two Sofi Awards.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://irp-cdn.multiscreensite.com/d303ec29/import/clib/twistedtaco_com/dms3rep/multi/tablet/TT-Home-Logo-R-424x80.png" alt="Twisted Taco" style="width:100%">
+      <h3>Twisted Taco</h3>
+      <p>From a single Midtown Atlanta restaurant to locations throughout Atlanta and an ever growing national presence on college campuses, the emphasis at Twisted Taco has always been on good food and good times. Twisted Taco’s mantra is to provide the freshest ingredients, sourced locally when possible, and be a leader in living and working “green,” as evidenced by their attention to sustainable products such as compostable “to go” boxes.  </p>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32">
+    <div class="w3-third">
+      <h3>About</h3>
+      <p>Just a group of kids making a web survey at a coding camp. We are all in high school and had to make this for a project.<br>
+      Archie, Kai, Roshan, Shreya, & Harshith </p>
+      <p>Powered by <a href="https://www.tagedonline.org/futureready-coding-camp/" target="_blank">TAG-Ed & Lexis Nexis Risk Solutions</a></p>
+    </div>
+
+    <div class="w3-third w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Spicy</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">24 HR</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Vegan</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Vegetarian</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Coffee</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Mexican</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Nearby</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Doughnuts</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried Chicken</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken Wings</span>
+      </p>
+    </div>
+  </footer>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
