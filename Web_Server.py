@@ -4,7 +4,7 @@ Created on Thu Jul 11 21:48:39 2019
 
 @author: Pranav Devarinti
 """
-
+import numpy as np
 import tornado.ioloop
 import tornado.web as web
 import tornado
@@ -19,15 +19,16 @@ import json
 loop = tornado.ioloop.IOLoop.instance()
 User_list = dict()
 try:
-   with open(r"C:\Users\ASUS\Desktop\RestaurantProject-master\UAS.json",'r') as f:
+   with open(r"UAS.json",'r') as f:
         User_list = json.load(f)
 except:
-    with open(r"C:\Users\ASUS\Desktop\RestaurantProject-master\UAS.json",'w') as f:
-        User_list['Pranav'] = {'password':'D'}
-        User_list['Sujit'] = {'password':'I'}
+    with open(r"UAS.json",'a+') as f:
+        User_list['Pranav'] = {'password':'D','Currentlist':np.random.uniform(low=-1,high=1,size=(100)).tolist()}
+        User_list['Sujit'] = {'password':'I','Currentlist':np.random.uniform(low=-1,high=1,size=(100)).tolist()}
         print('dumped')
         json.dump(User_list,f)
 Token_list = dict()
+restraunt_list = {'LR':np.random.uniform(low=-1,high=1,size=(100)),'PR':np.random.uniform(low=-1,high=1,size=(100)),'RA':np.random.uniform(low=-1,high=1,size=(100))}
 # In[]
 
     
@@ -81,6 +82,7 @@ class Home(RequestHandler):
             Se = str(self.get_secure_cookie("Sess"))[2:-1]
             print(Se)
             User = Token_list[Se]
+            cv = str(User_list[User]['Currentlist'])
             message = '''<html>
             <head>
             <style>
@@ -92,9 +94,14 @@ class Home(RequestHandler):
             <body>
             <h1>Welcome<h1>
             <h1>||<h1>
+            <h1>Your current food values are<h1>
+            <p>|\|</p>
             </body>'''
+            message = message.replace('||',User)
+            message = message.replace('|\|',cv)
+            self.write(message)
             
-            self.write(message.replace('||',User))
+            
         except:
             print('Sending back')
             self.redirect('/Login')
@@ -104,7 +111,7 @@ class Signup(RequestHandler):
         self.render('signup_page.html')
     def post(self):
         try:
-            User_list[self.get_argument("uname")] = {'password':self.get_argument("psw")}
+            User_list[self.get_argument("uname")] = {'password':self.get_argument("psw"),'Currentlist':np.random.uniform(low=-1,high=1,size=(100))}
             x = token_urlsafe(16)
             self.set_secure_cookie("Sess",x)
             Token_list[x] = self.get_argument("uname")
